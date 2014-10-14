@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fellesklasser
+{
+    public class Jagerfly : Fly
+    {
+        private int antallRaketter = 0;
+        private string våpenSystem;
+
+        public Jagerfly() { }
+        public Jagerfly(string f, double p, bool o, FlyEskadre nyEskadre, int a, string v) : base(f,p,o,nyEskadre)
+        {
+            
+            antallRaketter = a;
+            våpenSystem = v;
+        }
+        public void SettVåpen(int a, string v)
+        {
+            antallRaketter = a;
+            våpenSystem = v;
+        }
+        public int FinnRaketter
+        {
+            get { return antallRaketter; }
+        }
+        public string FinnVåpensystem
+        {
+            get { return våpenSystem; }
+        }
+
+         public override void SkrivUt()
+            {
+ 	             base.SkrivUt();
+                 Console.WriteLine("Antall raketter: {0}\nVåpensystem: {1}", antallRaketter, våpenSystem);
+
+                
+            }
+
+
+    }
+}

@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Fellesklasser;
+
+namespace Eskadre
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FlyEskadre e1 = new FlyEskadre("Black Hawk Down", "Norway", 3);
+            Jagerfly j1 = new Jagerfly("F18E32", 3.80, true, e1, 7, "Varmesøkende");
+            Jagerfly j2 = new Jagerfly();
+            Jagerfly j3 = new Jagerfly("F18E66", 5.28, false, e1, 0, "Nuclear");
+
+            j2.FlyNummer = "F18E33";
+            j2.Posisjon = 6.28;
+            j2.Operativ = true;
+            j2.Eskadre = e1;
+            j2.SettVåpen(5, "Bomber");
+            
+
+            Console.WriteLine("Eskadre Informasjon:");
+            e1.SkrivUt();
+
+            Console.WriteLine("\nInformasjon om Jagerfly 1:");
+            j1.SkrivUt();
+
+            Console.WriteLine("\nInformasjon om Jagerfly 2:");
+            j2.SkrivUt();
+
+            Console.WriteLine("\nInfomasjon om Jagerfly 3:");
+            j3.SkrivUt();
+
+
+            Console.ReadKey();
+
+
+
+
+
+
+
+        }
+    }
+}

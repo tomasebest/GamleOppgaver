@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fellesklasser
+{
+   public abstract class Fly
+    {
+       private string flyNummer;
+       private double posisjon = 0;
+       private bool operativ;
+       FlyEskadre eskadre;
+
+       public Fly() { }
+       public Fly(string f, double p, bool o, FlyEskadre nyEskadre)
+       {
+           flyNummer = f;
+           posisjon = p;
+           operativ = o;
+           eskadre = nyEskadre;
+       }
+       public string FlyNummer
+       {
+           get { return flyNummer; }
+           set { flyNummer = value; }
+       }
+       public double Posisjon
+       {
+           get { return posisjon; }
+           set { posisjon = value; }
+       }
+       public bool Operativ
+       {
+           get { return operativ; }
+           set { operativ = value; }
+       }
+       
+       public FlyEskadre Eskadre
+        {
+            get{return eskadre;}
+            set{eskadre = value;}
+        }
+       public string FinnFlyNummer() { return flyNummer; }
+       public double FinnPosisjon() { return posisjon; }
+       public bool FinnOperativ() { return operativ; }
+       public FlyEskadre FinnEskadre() { return eskadre; }
+
+       public virtual void SkrivUt()
+       {
+           Console.WriteLine("Flynummer: {0}\nPosisjon: {1}\nOperativ: {2}", flyNummer, posisjon, operativ);
+       }
+
+
+
+    }
+}

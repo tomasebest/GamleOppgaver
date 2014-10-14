@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fellesklasser
+{
+    public class FlyEskadre
+    {
+        private string eskadreNavn;
+        private string nasjon;
+        private int antallFly;
+
+        public FlyEskadre(string e = "", string n = "", int a = 0)
+        {
+            eskadreNavn = e;
+            nasjon = n;
+            antallFly = a;
+        }
+
+        public string EskadreNavn { get; set; }
+        public string Nasjon { get; set; }
+        public int AntallFly { get; set; }
+
+        public string FinnEskadreNavn() { return eskadreNavn; }
+        public string FinnNassjon() { return nasjon; }
+        public int FinnAntallFly() { return antallFly; }
+
+        public void SkrivUt()
+        {
+            Console.WriteLine("Eskadrens navn: {0}\nEskadrens nasjon: {1}\nAntall fly i eskadren: {2}", eskadreNavn, nasjon, antallFly);
+        }
+
+        
+    }
+}
